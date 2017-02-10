@@ -12,5 +12,5 @@
 * Numbered Lists
 
 ## Todo
-- [] tests
-- [] other bbcode tags 
+- tests
+- other bbcode tags 
