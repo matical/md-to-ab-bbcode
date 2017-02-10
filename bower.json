@@ -1,0 +1,15 @@
+{
+  "name": "markdown-to-ab-bbcode",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "^0.97.8",
+    "clipboard": "^1.5.16"
+  }
+}

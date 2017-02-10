@@ -1,0 +1,40 @@
+$c_mainsw1: #ee4f87;
+$valid-g: #7cb342;
+$invalid-r: #ff3d00;
+body {
+    background-color: #212121;
+}
+
+// memes
+.s2 {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0.001;
+    transition: opacity .30s ease-in-out;
+    &:hover {
+        opacity: 0.30;
+        transition: opacity .65s ease-in-out;
+    }
+}
+
+.input-field {
+    textarea.materialize-textarea {
+        &:focus {
+            border-bottom: 1px solid $c_mainsw1;
+            box-shadow: 0 1px 0 0 $c_mainsw1;
+            +label {
+                color: $c_mainsw1;
+            }
+        }
+        &.valid {
+            border-bottom: 1px solid $valid-g;
+            box-shadow: 0 1px 0 0 $valid-g;
+        }
+        &.invalid {
+            border-bottom: 1px solid $invalid-r;
+            box-shadow: 0 1px 0 0 $invalid-r;
+        }
+    }
+}

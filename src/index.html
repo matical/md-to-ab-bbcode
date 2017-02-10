@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown to AB-flavored bbcode</title>
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/materialize/bin/materialize.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h4 class="white-text">Markdown to AB-flavored BBCode</h4>
+                <h6 class="white-text"><span id="git-hash">dev build</span></h6>
+            </div>
+        </div>
+        <div class="row">
+            <button class="pink lighten-2 waves-effect waves-light btn" data-clipboard-target="#right_ta"><i class="material-icons left">content_copy</i>Copy to clipboard</button>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 l6">
+                <h5 class="white-text light">Markdown</h5>
+                <textarea id="left_ta" class="materialize-textarea white-text" onchange="convert()" onkeyup="convert()" placeholder="Markdown here"
+                    onfocus="this.placeholder = ''"></textarea>
+            </div>
+            <div class="input-field col s12 l6">
+                <h5 class="white-text light">BBCode</h5>
+                <textarea id="right_ta" class="materialize-textarea white-text" placeholder="BBCode will show up here." onfocus="this.placeholder = ''"></textarea>
+            </div>
+        </div>
+        <div class="stuff white-text">
+            <h4>Image + Title text</h4>
+            <hr>
+            <code>![alt-text](link)</code> becomes <code>[img=alt-text]link[/img]</code>
+            <p>Alt-text portion can be left blank.</p>
+            <h4>Urls</h4>
+            <hr>
+            <code>[memes](http://ksmz.moe)</code> becomes <code>[url=http://ksmz.moe]memes[/url]</code>
+            <h4>&quot;Bigger&quot; h1 and h2</h4>
+            <hr>
+            <pre>memes
+===</pre>
+            <pre>V</pre>
+            <code>[quote][size=7]memes[/size][/quote]</code>
+            <p>(and <code>---</code> will produce size 6)</p>
+            <h4>Regular h1 to h5</h4>
+            <hr>
+            <code># Memes</code> becomes <code>[size=7]memes[/size]</code>
+            <p>No h6 because that's the default size on AB (size 2).</p>
+            <h4>Code</h4>
+            <hr>
+            <p>Backticks (<code>```</code>), Tilde(<code>~~~</code>) and Inline (<code>`</code>) works. Inline is sorta useless
+                because AB sets [code] to always wrap.</p>
+            <h4>Stylization</h4>
+            <hr>
+            <p>Standard <code>*italic*</code>, <code>**bold**</code> and <code>***both***</code> work.</p>
+            <h4>Quote</h4>
+            <hr>
+            <p>&gt; to quote. Works on a single line.</p>
+            <h4>Lists</h4>
+            <hr>
+            <p>Star, Minus and Plus lists output regular dotted lists [*].</p>
+            <p>Numbered lists will give numbered lists (duh) [#]</p>
+            <pre>1. same
+2. same
+* same
+* same 
+            </pre>
+        </div>
+    </div>
+    <img class="s2" src="images/c.png">
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/materialize/bin/materialize.js"></script>
+    <script src="/bower_components/clipboard/dist/clipboard.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>
