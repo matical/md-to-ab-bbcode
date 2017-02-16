@@ -1,4 +1,4 @@
-# Markdown to AB-flavored BBcode
+# Markdown to AB-flavored BBcode [![Build Status](https://travis-ci.org/matical/md-to-ab-bbcode.svg?branch=master)](https://travis-ci.org/matical/md-to-ab-bbcode)
 
 ## Things supported
 
