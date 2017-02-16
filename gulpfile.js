@@ -16,7 +16,6 @@ gulp.task('hash', (cb) => {
     return $.git.revParse({ args: '--short HEAD' }, (err, hash) => {
         githash = hash;
         cb(err);
-        console.log('Current revision: ' + githash);
     })
 })
 
@@ -24,11 +23,11 @@ gulp.task('rev-count', (cb) => {
     return $.git.exec({ args: 'rev-list --count HEAD' }, (err, count) => {
         gitcount = count.trim();
         cb(err);
-        console.log('r' + gitcount);
     })
 })
 
 gulp.task('inject-githash', ['hash', 'rev-count'], () => {
+    console.log(`Current Rev: ${githash} (r${gitcount})`);
     return gulp.src('dist/index.html')
         .pipe($.cheerio(($) => {
             $('#git-hash').replaceWith('<span id="git-hash">Built with: ' + githash + ' (r' + gitcount + ')</span>');
