@@ -84,7 +84,7 @@ function convert() {
         // Code
         .replace(/^\`{3,3}(.*)\n((?:.|\n)+?)\n\`{3,3}\n?$/gmi, "[code]$2[/code]") // Backticks
         .replace(/^\~{3,3}(.*)\n((?:.|\n)+?)\n\~{3,3}\n?$/gmi, "[code]$2[/code]") // Tilde
-        .replace(/\`([^\`].*?)\`/gmi, "[code]$1[/code]") // Inline (AB shoves everything in a code tag to a box that gets newline'd, so pretty redundant.)
+        .replace(/\`([^\`].*?)\`/gmi, "[pre]$1[/pre]")
 
         // Stylization
         .replace(/\*\*\*([^\*].*?)\*\*\*/gmi, "[b][i]$1[/i][/b]") // bold + italic
