@@ -6,6 +6,10 @@
         "node": true,
         "jquery": true
     },
+    "globals": {
+        "Clipboard": true,
+        "Materialize": true
+    },
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
