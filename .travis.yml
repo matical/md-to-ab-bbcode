@@ -1,18 +1,19 @@
 language: node_js
 node_js:
-  - "node"
+    - "node"
 
 sudo: false
 
 cache:
-  directories:
-    - node_modules
-
+    directories:
+        - $HOME/.cache/bower
+        - $HOME/.npm
+    
 before_script:
-  - npm install -g gulp bower
-  - bower install
+    - npm install -g gulp bower
+    - bower install
 
 script: gulp
 
 notifications:
-  email: false
+    email: false
