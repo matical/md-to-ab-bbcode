@@ -41,7 +41,7 @@ function convert() {
     let leftval = left.value;
     /*
      * Mini pipeline-ish-like thingy.
-     * Which replacement "comes first"" matters.
+     * Which replacement "comes first" matters.
      */
     leftval = leftval
 
