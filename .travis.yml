@@ -1,8 +1,18 @@
-sudo: false
 language: node_js
 node_js:
   - "node"
+
+sudo: false
+
+cache:
+  directories:
+    - node_modules
+
 before_script:
   - npm install -g gulp bower
   - bower install
+
 script: gulp
+
+notifications:
+  email: false
