@@ -79,8 +79,6 @@ function convert() {
         .replace(/^[#]{1,1}\s*(.*[^\s])\s*[#]{1,1}\n?$/gmi, "[size=7]$1[/size]")
         .replace(/^(?!\n*[`]{3,3})[#]{1,1}\s+(.*)\n?$/gmi, "[size=7]$1[/size]")
         
-        //.replace(/^\t|[ ]{4,4}(.*)/gmi, "$1")  // Strip tabs
-
         // Code
         .replace(/^\`{3,3}(.*)\n((?:.|\n)+?)\n\`{3,3}\n?$/gmi, "[code]$2[/code]") // Backticks
         .replace(/^\~{3,3}(.*)\n((?:.|\n)+?)\n\~{3,3}\n?$/gmi, "[code]$2[/code]") // Tilde
@@ -90,7 +88,6 @@ function convert() {
         .replace(/\*\*\*([^\*].*?)\*\*\*/gmi, "[b][i]$1[/i][/b]") // bold + italic
         .replace(/\*\*([^\*].*?)\*\*/gmi, "[b]$1[/b]") // bold
         .replace(/\*([^\*].*?)\*/gmi, "[i]$1[/i]") // italic
-        //.replace(/(\s)\*((?!\/[0-9]|\s|\*).*?)\*(\s)/gmi, "$1[i]$2[/i]$3") // italic
         
         // Quote
         .replace(/^>\s(.*)?[^\n]?$/gmi, "[quote]$1[/quote]") // Quotes
