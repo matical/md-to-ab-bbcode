@@ -5,6 +5,7 @@ node_js:
 sudo: false
 
 cache:
+    yarn: true
     directories:
         - $HOME/.cache/bower
         - $HOME/.npm
